@@ -34,3 +34,4 @@ async def shout_handler(msg: Message, bot: Bot):
 
 async def game_menu_handler(msg: Message, bot: Bot):
     await msg.answer(text='Меню', reply_markup=get_inline_keyboard())
+

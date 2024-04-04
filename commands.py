@@ -18,7 +18,24 @@ async def set_commands(bot: Bot):
         BotCommand(
             command='games',
             description='Игры'
+        ),
+        BotCommand(
+            command='on',
+            description='включить бота'
+        ),
+        BotCommand(
+            command='off',
+            description='отключить бота'
+        ),
+        BotCommand(
+            command='form',
+            description='Создать персонажа'
+        ),
+        BotCommand(
+            command='character',
+            description='Показать моего персонажа'
         )
+
 
 
     ]
