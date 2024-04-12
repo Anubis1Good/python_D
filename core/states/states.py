@@ -8,3 +8,4 @@ class PlayerRegistrationState(StatesGroup):
     hero_race = State()
     hero_class = State()
     hero_avatar = State()
+

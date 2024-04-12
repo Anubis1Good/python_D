@@ -3,6 +3,7 @@ from aiogram.types import Message
 from aiogram.filters import Command
 from core.keyboards.reply.reply_keyboards import get_reply_keyboard
 from core.keyboards.inline.inline_keyboards import get_inline_keyboard
+from core.filters.is_contact import IsTrueContact
 
 router = Router(name=__name__)
 
@@ -41,4 +42,13 @@ async def shout_handler(msg: Message):
 async def game_menu_handler(msg: Message):
     await msg.answer(text='Меню', reply_markup=get_inline_keyboard())
 
+@router.message(F.contact, IsTrueContact())
+async def get_true_contact(msg:Message):
+    await msg.answer('Вы прислали свой контакт.')
 
+@router.message(F.contact)
+async def get_fake_contact(msg:Message):
+    await msg.answer('Вы прислали не свой контакт.')
+
+
+    

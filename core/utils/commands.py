@@ -34,7 +34,15 @@ async def set_commands(bot: Bot):
         BotCommand(
             command='character',
             description='Показать моего персонажа'
-        )
+        ),
+        BotCommand(
+            command='low_price',
+            description='Показать дешевые товары'
+        ),
+        BotCommand(
+            command='high_price',
+            description='Показать дорогие товары'
+        ),
 
 
 

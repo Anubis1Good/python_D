@@ -1,13 +1,11 @@
 import asyncio
-from aiogram import Bot, Dispatcher, F
+from aiogram import Bot, Dispatcher
 from core.utils.commands import set_commands
-from core.handlers.main_handler_reg import registration_handlers
 from core.handlers.all_routers import all_routers
-
-TOKEN = '6348032181:AAGh3nrYTBpO_03WNaNFizomgKXqlHzVJvY'
+from core.utils.settings import settings
 
 async def start():
-    bot = Bot(token=TOKEN,parse_mode='HTML')
+    bot = Bot(token=settings.bot_token, parse_mode='HTML')
     dp = Dispatcher()
 
     for router in all_routers:
@@ -15,7 +13,7 @@ async def start():
     
     dp.startup.register(set_commands)
     
-    registration_handlers(dp)
+
 
     try:
         await dp.start_polling(bot)
